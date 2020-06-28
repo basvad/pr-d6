@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<h2>Список книг</h2>
+    <table border="1">
+		<tr>
+			<th>Название</td>
+			<th>Автор</td>
+			<th>Обложка</td>
+		</tr>
+		{% for book in object_list %}
+		<tr>
+			<td>{{ book.title }}</td>
+			<td>{{ book.author }}</td>
+			{% if book.photo %}
+			   <td><img src="{{ book.photo.url }}"  width="102px" height="102px"></td>
+			{% else %}
+			   <td>Изображение отстутсвует</td>
+			{% endif %}
+		</tr>
+	{% endfor %}
+	</table>
+	
+{% endblock %}
+
+

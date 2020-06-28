@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+<!--<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Издательства-Книги</title>
+</head>
+<body>
+    <h1>Книги по издательствам</h1>
+    {% for publish in publish %}
+        <ul class="list-group">
+            <li class="list-group-item">
+                {{ publish.name }}
+                <ul class="list-group">
+                    {% for book in publish.books.all %}
+                        <li class="list-group-item"> {{ book.title }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    {% endfor %}
+</body>
+</html>-->
+
+{% block content %}
+<h2>Книги по издательствам</h2>
+    {% for publish in publish %}
+        <ul class="list-group">
+            <li class="list-group-item">
+                {{ publish.name }}
+                <ul class="list-group">
+                    {% for book in publish.books.all %}
+                        <li class="list-group-item"> {{ book.title }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    {% endfor %}
+{% endblock %}
